@@ -40,16 +40,16 @@ const UserProfile = () => (
 
 const UserDetails = () => (
   <UserConsumer>
-  {context => {
-    return (
-      <div>
-        <p>Username: {context.username}</p>
-        <p>First Name: {context.firstName}</p>
-        <p>Last Name: {context.lastName}</p>
-    </div>
-    );
-  }}
-</UserConsumer>
+    {context => {
+      return (
+        <div>
+          <p>Username: {context.username}</p>
+          <p>First Name: {context.firstName}</p>
+          <p>Last Name: {context.lastName}</p>
+      </div>
+      );
+    }}
+  </UserConsumer>
 )
 
 export default App;
