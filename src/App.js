@@ -15,14 +15,14 @@ function App() {
 
 const User = ({ user }) => (
   <div>
-    {<UserProfile {...user} />}
+    <UserProfile {...user} />
   </div>
 )
 
 const UserProfile = ({ ...user }) => (
   <div>
     <h2>Profile Page of {user.username}</h2>
-    {<UserDetails {...user} />}
+    <UserDetails {...user} />
   </div>
 )
 
