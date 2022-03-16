@@ -1,10 +1,6 @@
 import { createContext, useState } from 'react';
 
-const UserContext = createContext({
-  username: 'johndoe',
-  firstName: 'John',
-  lastName: 'Doe'
-});
+const UserContext = createContext({});
 const UserProvider = UserContext.Provider;
 const UserConsumer = UserContext.Consumer;
 
