@@ -1,41 +1,36 @@
-import { Component } from 'react';
+import { useState } from 'react';
 
-class App extends Component {
-  state = {
-    user: {
-      username: 'jioke',
-      firstName: 'Kingsley',
-      lastName: 'Silas'
-    }
-  }
-
-  render() {
-    return(
-      <div>
-        <User user={this.state.user} />
-      </div>
-    )
-  }
+function App() {
+  const [user, setUser] = useState({
+    username: 'Ifycode',
+    firstName: 'Mary',
+    lastName: 'May'
+  });
+  return (
+    <div>
+    <User user={user} />
+  </div>
+  );
 }
 
-const User = (props) => (
+const User = ({ user }) => (
   <div>
-    <UserProfile {...props.user} />
+    {<UserProfile {...user} />}
   </div>
 )
 
-const UserProfile = (props) => (
+const UserProfile = ({ ...user }) => (
   <div>
-    <h2>Profile Page of {props.username}</h2>
-    <UserDetails {...props} />
+    <h2>Profile Page of {user.username}</h2>
+    {<UserDetails {...user} />}
   </div>
 )
 
-const UserDetails = (props) => (
+const UserDetails = ({ ...user }) => (
   <div>
-    <p>Username: {props.username}</p>
-    <p>First Name: {props.firstName}</p>
-    <p>Last Name: {props.lastName}</p>
+    <p>Username: {user.username}</p>
+    <p>First Name: {user.firstName}</p>
+    <p>Last Name: {user.lastName}</p>
   </div>
 )
 
